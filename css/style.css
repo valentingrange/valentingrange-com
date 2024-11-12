@@ -1,0 +1,58 @@
+
+.content {
+  margin-top: 4rem;
+}
+
+
+.button {
+    position: fixed; /* Fixed/sticky position */
+    right: 2rem;
+}
+
+.btn-return{
+  margin-left: 2rem;
+}
+
+.gradient-mario{
+background: rgb(255,0,0);
+background: -moz-linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(62,144,0,1) 33%, rgba(0,123,255,1) 66%, rgba(255,186,0,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(62,144,0,1) 33%, rgba(0,123,255,1) 66%, rgba(255,186,0,1) 100%);
+background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(62,144,0,1) 33%, rgba(0,123,255,1) 66%, rgba(255,186,0,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000",endColorstr="#ffba00",GradientType=1);
+}
+
+.gradient-minecraft{
+background: rgb(92,53,1);
+background: -moz-linear-gradient(0deg, rgba(92,53,1,1) 70%, rgba(37,131,3,1) 100%);
+background: -webkit-linear-gradient(0deg, rgba(92,53,1,1) 70%, rgba(37,131,3,1) 100%);
+background: linear-gradient(0deg, rgba(92,53,1,1) 70%, rgba(37,131,3,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5c3501",endColorstr="#258303",GradientType=1);
+}
+
+.imgg{
+  border: 13px;
+  border-style: ridge;
+  margin: 20px;
+  padding: 2;
+  border-color:#dbca12 ;
+}
+.immg{
+ width: 100%;
+}
+/*.iimg{
+  
+}*/
+
+.taille{
+  width: 636px;
+  margin: 20px;
+}
+
+.pays-de-mario-odeyssey{
+  border-style: ridge;
+}
+
+/*.divv{
+  
+}*/
+
