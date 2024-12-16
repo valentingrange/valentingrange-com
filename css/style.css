@@ -5,7 +5,7 @@
 
 
 .button {
-    position: fixed; /* Fixed/sticky position */
+    position: fixed;
     right: 2rem;
 }
 
@@ -14,19 +14,27 @@
 }
 
 .gradient-mario{
-background: rgb(255,0,0);
-background: -moz-linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(62,144,0,1) 33%, rgba(0,123,255,1) 66%, rgba(255,186,0,1) 100%);
-background: -webkit-linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(62,144,0,1) 33%, rgba(0,123,255,1) 66%, rgba(255,186,0,1) 100%);
-background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(62,144,0,1) 33%, rgba(0,123,255,1) 66%, rgba(255,186,0,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000",endColorstr="#ffba00",GradientType=1);
+  background: rgb(249,4,0);
+  background: -moz-linear-gradient(90deg, rgba(249,4,0,1) 0%, rgba(32,234,0,1) 33%, rgba(255,225,0,1) 66%, rgba(2,126,255,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(249,4,0,1) 0%, rgba(32,234,0,1) 33%, rgba(255,225,0,1) 66%, rgba(2,126,255,1) 100%);
+  background: linear-gradient(90deg, rgba(249,4,0,1) 0%, rgba(32,234,0,1) 33%, rgba(255,225,0,1) 66%, rgba(2,126,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f90400",endColorstr="#027eff",GradientType=1);
 }
 
 .gradient-minecraft{
-background: rgb(92,53,1);
-background: -moz-linear-gradient(0deg, rgba(92,53,1,1) 70%, rgba(37,131,3,1) 100%);
-background: -webkit-linear-gradient(0deg, rgba(92,53,1,1) 70%, rgba(37,131,3,1) 100%);
-background: linear-gradient(0deg, rgba(92,53,1,1) 70%, rgba(37,131,3,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5c3501",endColorstr="#258303",GradientType=1);
+  background: rgb(123,88,61);
+  background: -moz-linear-gradient(0deg, rgba(123,88,61,1) 75%, rgba(86,131,74,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(123,88,61,1) 75%, rgba(86,131,74,1) 100%);
+  background: linear-gradient(0deg, rgba(123,88,61,1) 75%, rgba(86,131,74,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7b583d",endColorstr="#56834a",GradientType=1);
+}
+
+.gradient-zelda{
+  background: rgb(147,115,32);
+  background: -moz-linear-gradient(0deg, rgba(147,115,32,1) 0%, rgba(249,194,54,1) 50%, rgba(147,115,32,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(147,115,32,1) 0%, rgba(249,194,54,1) 50%, rgba(147,115,32,1) 100%);
+  background: linear-gradient(0deg, rgba(147,115,32,1) 0%, rgba(249,194,54,1) 50%, rgba(147,115,32,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#937320",endColorstr="#937320",GradientType=1);
 }
 
 .imgg{
@@ -36,23 +44,37 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5c3501",endCo
   padding: 2;
   border-color:#dbca12 ;
 }
+
 .immg{
- width: 100%;
+  width: 100%;
 }
-/*.iimg{
-  
-}*/
 
 .taille{
   width: 636px;
   margin: 20px;
 }
 
-.pays-de-mario-odeyssey{
+.pays-de-mario-odyssey{
   border-style: ridge;
 }
 
-/*.divv{
-  
-}*/
+.couleur-de-lien{
+  color: #000000;
+}
 
+.bg{
+  width: 100%;
+  z-index: -2;
+  position: fixed;
+}
+
+.zelda{
+  display: center;
+  width: 200%;
+  position: fixed;
+  z-index: -1;
+}
+
+.decal{
+  margin-left: 1rem;
+}
