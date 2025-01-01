@@ -5,8 +5,8 @@
 
 
 .button {
-    position: fixed;
-    right: 2rem;
+  position: fixed;
+  right: 2rem;
 }
 
 .btn-return{
@@ -22,19 +22,27 @@
 }
 
 .gradient-minecraft{
-  background: rgb(123,88,61);
-  background: -moz-linear-gradient(0deg, rgba(123,88,61,1) 75%, rgba(86,131,74,1) 100%);
-  background: -webkit-linear-gradient(0deg, rgba(123,88,61,1) 75%, rgba(86,131,74,1) 100%);
-  background: linear-gradient(0deg, rgba(123,88,61,1) 75%, rgba(86,131,74,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7b583d",endColorstr="#56834a",GradientType=1);
+  background: rgb(151,109,76);
+  background: -moz-linear-gradient(0deg, rgba(151,109,76,1) 87%, rgba(98,187,75,1) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(151,109,76,1) 87%, rgba(98,187,75,1) 100%);
+  background: linear-gradient(0deg, rgba(151,109,76,1) 87%, rgba(98,187,75,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#976d4c",endColorstr="#62bb4b",GradientType=1);
 }
 
-.gradient-zelda{
-  background: rgb(147,115,32);
-  background: -moz-linear-gradient(0deg, rgba(147,115,32,1) 0%, rgba(249,194,54,1) 50%, rgba(147,115,32,1) 100%);
-  background: -webkit-linear-gradient(0deg, rgba(147,115,32,1) 0%, rgba(249,194,54,1) 50%, rgba(147,115,32,1) 100%);
-  background: linear-gradient(0deg, rgba(147,115,32,1) 0%, rgba(249,194,54,1) 50%, rgba(147,115,32,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#937320",endColorstr="#937320",GradientType=1);
+.gradient-zelda-Totk{
+  background: rgb(249,247,220);
+  background: -moz-radial-gradient(circle, rgba(249,247,220,1) 0%, rgba(73,212,156,1) 48%, rgba(249,247,220,1) 76%);
+  background: -webkit-radial-gradient(circle, rgba(249,247,220,1) 0%, rgba(73,212,156,1) 48%, rgba(249,247,220,1) 76%);
+  background: radial-gradient(circle, rgba(249,247,220,1) 0%, rgba(73,212,156,1) 48%, rgba(249,247,220,1) 76%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f9f7dc",endColorstr="#f9f7dc",GradientType=1);
+}
+
+.gradient-zelda-Botw{
+  background: rgb(185,159,101);
+  background: -moz-linear-gradient(90deg, rgba(185,159,101,1) 15%, rgba(122,146,151,1) 30%, rgba(185,159,101,1) 45%);
+  background: -webkit-linear-gradient(90deg, rgba(185,159,101,1) 15%, rgba(122,146,151,1) 30%, rgba(185,159,101,1) 45%);
+  background: linear-gradient(90deg, rgba(185,159,101,1) 15%, rgba(122,146,151,1) 30%, rgba(185,159,101,1) 45%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b99f65",endColorstr="#b99f65",GradientType=1);
 }
 
 .imgg{
