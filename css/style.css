@@ -67,7 +67,7 @@
 }
 
 .couleur-de-lien{
-  color: #000000;
+  color: #444444;
 }
 
 .bg{
@@ -85,4 +85,48 @@
 
 .decal{
   margin-left: 1rem;
+}
+
+.acc{
+  width: 720px;
+}
+
+.bodyy {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+  margin: 20px;
+  color: #333;
+  font-size: 20px;
+}
+.headerr {
+  text-align: center;
+  padding: 20px;
+}
+.h11 {
+  color: #4CAF50;
+  text-align: center;
+  font-size: 36px;
+}
+.sectionn {
+  background: white;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border-left: 5px solid #4CAF50;
+}
+.footerr {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.h22 {
+  color: #4CAF50;
+  font-size: 28px;
+  margin-top: 30px;
 }
