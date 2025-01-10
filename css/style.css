@@ -57,6 +57,11 @@
   width: 100%;
 }
 
+.iimg{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .taille{
   width: 636px;
   margin: 20px;
