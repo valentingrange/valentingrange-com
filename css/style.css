@@ -58,8 +58,10 @@
 }
 
 .iimg{
-  margin-left: 10px;
-  margin-right: 10px;
+  width: 90%;
+  display: block;
+
+  margin: auto;
 }
 
 .taille{
@@ -134,4 +136,8 @@
   color: #4CAF50;
   font-size: 28px;
   margin-top: 30px;
+}
+
+.aligne{
+  margin-left: 95px;
 }
