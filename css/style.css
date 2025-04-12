@@ -141,3 +141,7 @@
 .aligne{
   margin-left: 95px;
 }
+
+a:has(.home-card){
+ text-decoration: none;
+}
