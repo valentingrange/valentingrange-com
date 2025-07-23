@@ -145,3 +145,11 @@
 .card-home{
  text-decoration: none;
 }
+
+.gradient-marcel{
+  background: #ffa200;
+  background: -webkit-linear-gradient(90deg, rgba(255, 162, 0, 1) 0%, rgba(79, 246, 255, 1) 50%, rgba(174, 21, 230, 1) 100%);
+  background: -moz-linear-gradient(90deg, rgba(255, 162, 0, 1) 0%, rgba(79, 246, 255, 1) 50%, rgba(174, 21, 230, 1) 100%);
+  background: linear-gradient(90deg, rgba(255, 162, 0, 1) 0%, rgba(79, 246, 255, 1) 50%, rgba(174, 21, 230, 1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFA200", endColorstr="#AE15E6", GradientType=1);
+}
