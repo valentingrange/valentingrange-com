@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carte interactive - Sanctuaires BOTW</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+    }
+    h1 {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    #map-container {
+      position: relative;
+      width: 80%;
+      margin: 0 auto 30px auto;
+    }
+    #map {
+      width: 100%;
+      display: block;
+      user-select: none;
+    }
+    .shrine {
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      background-image: url('../img/sanctuaire.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 0 5px #00f;
+      transition: transform 0.2s ease;
+    }
+    .shrine:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 10px #0ff;
+    }
+    #preview {
+      margin: 0 auto 40px auto;
+      padding: 15px;
+      width: 600px;
+      background-color: #222;
+      border: 1px solid #444;
+      min-height: 80px;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Carte interactive des sanctuaires</h1>
+
+  <div id="map-container">
+    <img id="map" src="../img/Carte-botw.png" alt="Carte de Hyrule" />
+    <!-- plateau prelude -->
+    <div class="shrine" style="top: 68%; left: 45%;" data-name="" data-desc=""></div>
+    <div class="shrine" style="top: 64%; left: 43.5%;" data-name="" data-desc=""></div>
+    <div class="shrine" style="top: 70%; left: 42%;" data-name="" data-desc=""></div>
+    <div class="shrine" style="top: 68%; left: 38%;" data-name="" data-desc=""></div>
+    <!-- monts géminés -->
+    <div class="shrine" style="top: 65%; left: 49.7%;" data-name="" data-desc=""></div>
+    <div class="shrine" style="top: 66%; left: 59.5%;" data-name="" data-desc=""></div>
+    <div class="shrine" style="top: 66%; left: 60.5%;" data-name="" data-desc=""></div>
+    <div class="shrine" style="top: 68%; left: 60%;" data-name="" data-desc=""></div>
+    <div class="shrine" style="top: 67.5%; left: 63.5%;" data-name="" data-desc=""></div>
+    <div class="shrine" style="top: 72.5%; left: 64.5%;" data-name="" data-desc=""></div>
+    <div class="shrine" style="top: 57%; left: 65%;" data-name="" data-desc=""></div>
+
+    <div class="shrine" style="top: 10%; left: 12%;" data-name="" data-desc=""></div>
+    <div class="shrine" style="top: 11.7%; left: 42.3%;" data-name="" data-desc=""></div>
+  </div>
+
+  <div id="preview">Cliquez sur un sanctuaire pour voir ses détails.</div>
+
+  <script>
+    const preview = document.getElementById('preview');
+    document.querySelectorAll('.shrine').forEach(shrine => {
+      shrine.addEventListener('click', () => {
+        const name = shrine.getAttribute('data-name');
+        const desc = shrine.getAttribute('data-desc');
+        preview.innerHTML = `<strong>${name}</strong><br>${desc}`;
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
