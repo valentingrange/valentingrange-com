@@ -153,3 +153,271 @@
   background: linear-gradient(90deg, rgba(255, 162, 0, 1) 0%, rgba(79, 246, 255, 1) 50%, rgba(174, 21, 230, 1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#FFA200", endColorstr="#AE15E6", GradientType=1);
 }
+.body-mario-odyssey {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  margin: 0;
+}
+
+.gradient-mario {
+  background: linear-gradient(135deg, #ff0000, #ff8c00);
+  padding: 100px 20px 50px 20px;
+  text-align: center;
+  color: white;
+}
+
+.gradient-mario h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.gradient-mario h5 {
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  line-height: 1.5;
+}
+
+.summary {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: -50px auto 40px auto;
+  text-align: left;
+}
+
+.summary h3 {
+  color: #e60000;
+  margin-bottom: 15px;
+}
+
+.summary p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.immg {
+  display: block;
+  max-width: 90%;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.immg:hover {
+  transform: scale(1.03);
+}
+
+/* Boutons */
+.btn-custom {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+  }
+
+.btn-custom:hover {
+  background-color: #e60000;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .gradient-mario h1 {
+        font-size: 2.2rem;
+    }
+    .gradient-mario h5 {
+        font-size: 1rem;
+    }
+}
+
+.padding{
+  padding-bottom: 100px;
+}
+
+.body-zelda-botw { 
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+}
+.hero-botw {
+  background: linear-gradient(135deg, #0f9d58, #c2a83e);
+  padding: 120px 20px 50px 20px;
+  text-align: center;color: white;
+}
+.hero-botw h1 { 
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero-botw h5 { 
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  line-height: 1.5;
+}
+.summary-botw {
+  background: rgba(255,255,255,0.95);
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: -50px auto 40px auto;
+}
+.summary-botw h3 { 
+  color: #0f9d58;
+  margin-bottom: 15px;
+}
+.img-botw {
+  display: block;
+  max-width: 90%;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform .3s;
+}
+.img-botw:hover { 
+  transform: scale(1.03);
+}
+.btn-botw {
+  background-color: #0f9d58;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background .3s, transform .3s;
+}
+.btn-botw:hover { 
+  background-color: #0b7a44;
+  transform: translateY(-2px);
+}
+
+.body-totk { 
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+}
+.hero-totk {
+    background: linear-gradient(135deg, #1a472a, #00bfa5);
+    padding: 120px 20px 50px 20px;
+    text-align: center;
+    color: white;
+}
+.hero-totk h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero-totk h5 { 
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  line-height: 1.5;
+}
+.summary-totk {
+  background: rgba(255,255,255,0.95);
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: -50px auto 40px auto;
+}
+.summary-totk h3 {
+  color: #00bfa5;
+  margin-bottom: 15px;
+}
+.img-totk {
+  display: block;
+  max-width: 90%;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform .3s;
+}
+.img-totk:hover {
+  transform: scale(1.03);
+}
+.btn-totk {
+  background-color: #00bfa5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background .3s, transform .3s;
+}
+.btn-totk:hover { 
+  background-color: #009688;
+  transform: translateY(-2px);
+}
+ 
+.body-minecraft { 
+  background: #f9f9f9;
+  margin: 0;
+}
+.hero-minecraft {
+  background: linear-gradient(135deg, #3c9e3c, #2f4f2f);
+  padding: 120px 20px 50px 20px;
+  text-align: center;
+  color: white;
+}
+.hero-minecraft h1 { 
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero-minecraft h5 { 
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  line-height: 1.5;
+}
+.summary-minecraft {
+  background: rgba(255,255,255,0.95);
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: -50px auto 40px auto;
+}
+.summary-minecraft h3 { 
+  color: #3c9e3c;
+  margin-bottom: 15px;
+}
+.img-minecraft {
+    display: block;
+    max-width: 90%;
+    margin: 30px auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: transform .3s;
+}
+.img-minecraft:hover { 
+  transform: scale(1.03);
+}
+.btn-minecraft {
+  background-color: #3c9e3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background .3s, transform .3s;
+}
+.btn-minecraft:hover { 
+  background-color: #2d7a2d;
+  transform: translateY(-2px);
+}
