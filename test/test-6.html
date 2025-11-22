@@ -1,8 +1,278 @@
-<html>
-    <head>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Subway Surfer 3D — Mini Clone</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;background:#071226;font-family:Inter, system-ui, Arial;color:#fff}
+    #game-container{width:100%;height:100vh;display:flex;align-items:center;justify-content:center}
+    canvas{display:block}
+    .hud{position:absolute;left:18px;top:18px;z-index:10}
+    .hud .score{font-size:18px;font-weight:700}
+    .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,6,12,.6),rgba(3,6,12,.8));display:flex;align-items:center;justify-content:center;flex-direction:column;color:white;z-index:12}
+    .overlay.hidden{display:none}
+    .btn{background:#ff6b6b;padding:10px 18px;border-radius:10px;color:white;font-weight:700;border:none;cursor:pointer;margin-top:12px}
+    .controls{position:absolute;right:18px;top:18px;text-align:right;font-size:13px;z-index:10}
+    @media (max-width:600px){.hud{left:10px;top:10px}.controls{right:10px;top:10px}}
+  </style>
+</head>
+<body>
+  <div id="game-container"></div>
 
-    </head>
-    <body>
-        <iframe src="https://5dd312fa-015f-11ea-ad56-9cb6d0d995f7.poki-gdn.com/ab7f605f-8e50-4214-86b9-abcd71360ab9/index.html" frameborder="0" width="100%" height="100%"></iframe>
-    </body>
+  <div class="hud">
+    <div class="score">Score: <span id="score">0</span></div>
+    <div class="speed">Vitesse: <span id="speed">1.0x</span></div>
+  </div>
+
+  <div class="controls">→ ← = changer de voie • ↑ / Espace = sauter</div>
+
+  <div class="overlay" id="overlay">
+    <h1>Subway Surfer 3D — Mini</h1>
+    <p>Prototype 3D simple avec Three.js — contrôles clavier & tactile.</p>
+    <button class="btn" id="startBtn">Démarrer</button>
+    <p style="opacity:.9;margin-top:8px">Sur mobile: tap pour sauter, swipe pour changer de voie</p>
+  </div>
+
+  <script type="module">
+    import * as THREE from 'https://unpkg.com/three@0.158.0/build/three.module.js';
+    import { GLTFLoader } from 'https://unpkg.com/three@0.158.0/examples/jsm/loaders/GLTFLoader.js';
+
+    // Scene setup
+    const container = document.getElementById('game-container');
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0x071226, 10, 80);
+
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 200);
+    camera.position.set(0, 6, 12);
+
+    const renderer = new THREE.WebGLRenderer({antialias:true});
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(2, window.devicePixelRatio));
+    container.appendChild(renderer.domElement);
+
+    // Lights
+    const hemi = new THREE.HemisphereLight(0xffffff, 0x444466, 0.9);
+    hemi.position.set(0, 20, 0); scene.add(hemi);
+    const dir = new THREE.DirectionalLight(0xffffff, 0.8); dir.position.set(-5,10,5); scene.add(dir);
+
+    // Ground / rails
+    const roadW = 9;
+    const roadGeom = new THREE.PlaneGeometry(roadW, 400);
+    const roadMat = new THREE.MeshStandardMaterial({color:0x222222, metalness:0.2, roughness:0.6});
+    const road = new THREE.Mesh(roadGeom, roadMat); road.rotation.x = -Math.PI/2; road.position.z = -150; scene.add(road);
+
+    // rails (simple lines)
+    function makeRail(x){
+      const g = new THREE.BoxGeometry(0.2,0.1,400);
+      const m = new THREE.MeshStandardMaterial({color:0x555555});
+      const b = new THREE.Mesh(g,m); b.position.set(x,0.05,-150); scene.add(b);
+    }
+    makeRail(-3); makeRail(0); makeRail(3);
+
+    // Lanes X positions
+    const lanes = [-3, 0, 3];
+    let currentLane = 1;
+
+    // Player
+    const player = new THREE.Group();
+    const body = new THREE.Mesh(new THREE.BoxGeometry(1.2,1.6,0.8), new THREE.MeshStandardMaterial({color:0xffcc66}));
+    body.position.y = 1.1; player.add(body);
+    const head = new THREE.Mesh(new THREE.BoxGeometry(0.9,0.9,0.6), new THREE.MeshStandardMaterial({color:0x6b3a1f})); head.position.set(0,2.0,0); player.add(head);
+    player.position.set(lanes[currentLane], 0, 6);
+    scene.add(player);
+
+    // simple shadow beneath player (a circle)
+    const shadow = new THREE.Mesh(new THREE.CircleGeometry(0.9, 16), new THREE.MeshBasicMaterial({color:0x000000, opacity:0.25, transparent:true}));
+    shadow.rotation.x = -Math.PI/2; shadow.position.set(0,0.01,6); scene.add(shadow);
+
+    // Obstacles & coins container
+    const obstacles = [];
+    const coins = [];
+
+    // spawn helpers (single declarations)
+    function spawnObstacle(){
+      const laneIdx = Math.floor(Math.random()*3);
+      const geom = new THREE.BoxGeometry(1.6,1.6,1.6);
+      const mat = new THREE.MeshStandardMaterial({color:0x8b2d2d});
+      const m = new THREE.Mesh(geom, mat);
+      const z = -80 - Math.random()*40;
+      m.position.set(lanes[laneIdx], 0.8, z);
+      scene.add(m);
+      obstacles.push({mesh:m,lane:laneIdx});
+    }
+
+    function spawnCoin(){
+      const laneIdx = Math.floor(Math.random()*3);
+      const geom = new THREE.TorusGeometry(0.45, 0.16, 12, 20);
+      const mat = new THREE.MeshStandardMaterial({color:0xffd86b, metalness:0.8, roughness:0.2});
+      const c = new THREE.Mesh(geom, mat);
+      const z = -60 - Math.random()*60;
+      c.rotation.x = Math.PI/2;
+      c.position.set(lanes[laneIdx], 1.4, z);
+      scene.add(c);
+      coins.push({mesh:c,lane:laneIdx});
+    }
+
+    // Game state
+    let running = false;
+    let score = 0;
+    const scoreEl = document.getElementById('score');
+    const speedEl = document.getElementById('speed');
+    let baseSpeed = 0.6; // how fast obstacles approach (higher => harder)
+    let gameSpeed = baseSpeed;
+
+    // Jump physics
+    let isJumping = false;
+    let yVel = 0;
+    const gravity = -0.035;
+
+    // collision boxes helper
+    const box = new THREE.Box3();
+    const playerBox = new THREE.Box3();
+
+    // Resize
+    window.addEventListener('resize', ()=>{
+      camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Controls
+    function moveLane(delta){
+      currentLane = Math.max(0, Math.min(2, currentLane + delta));
+    }
+
+    document.addEventListener('keydown', (e)=>{
+      if(!running && (e.key === ' ' || e.key === 'ArrowUp')) startGame();
+      if(e.key === 'ArrowLeft') moveLane(-1);
+      if(e.key === 'ArrowRight') moveLane(1);
+      if((e.key === 'ArrowUp' || e.key === ' ') && !isJumping){ isJumping = true; yVel = 0.6; }
+    });
+
+    // touch controls: swipe + tap
+    let touchStartX = null; let touchStartY = null; let touchStartT = 0;
+    renderer.domElement.addEventListener('touchstart', (ev)=>{ const t = ev.touches[0]; touchStartX = t.clientX; touchStartY = t.clientY; touchStartT = Date.now(); });
+    renderer.domElement.addEventListener('touchend', (ev)=>{
+      const t = ev.changedTouches[0]; const dx = t.clientX - touchStartX; const dy = t.clientY - touchStartY; const dt = Date.now()-touchStartT;
+      if(Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){
+        if(dx < 0) moveLane(-1); else moveLane(1);
+      } else {
+        // tap
+        if(!isJumping){ isJumping=true; yVel = 0.6; }
+      }
+      touchStartX = null;
+    });
+
+    // Start / End UI
+    const overlay = document.getElementById('overlay');
+    const startBtn = document.getElementById('startBtn');
+    startBtn.addEventListener('click', startGame);
+
+    function startGame(){
+      // reset
+      running = true; score = 0; scoreEl.textContent = '0'; baseSpeed = 0.6; gameSpeed = baseSpeed;
+      overlay.classList.add('hidden');
+      // remove existing obstacles/coins
+      obstacles.forEach(o=>scene.remove(o.mesh)); obstacles.length=0; coins.forEach(c=>scene.remove(c.mesh)); coins.length=0;
+      // reset player
+      currentLane = 1; player.position.set(lanes[currentLane], 0, 6); shadow.position.set(lanes[currentLane], 0.01, 6);
+      isJumping = false; yVel = 0;
+      lastSpawn = performance.now(); lastCoin = performance.now();
+    }
+
+    function endGame(){
+      running = false; overlay.classList.remove('hidden'); overlay.querySelector('h1').textContent = 'Game Over'; overlay.querySelector('p').textContent = 'Score: '+Math.floor(score)+" — Appuie sur Démarrer pour rejouer.";
+      startBtn.focus();
+    }
+
+    // Spawn timers
+    let lastSpawn = performance.now(); let lastCoin = performance.now();
+
+    // Main loop
+    const clock = new THREE.Clock();
+    function animate(){
+      requestAnimationFrame(animate);
+      const dt = Math.min(0.05, clock.getDelta());
+
+      if(running){
+        // speed scales slightly with score
+        gameSpeed = baseSpeed + Math.floor(score/50)*0.06;
+        speedEl.textContent = gameSpeed.toFixed(2)+ 'x';
+
+        // spawn
+        const now = performance.now();
+        if(now - lastSpawn > 700 - Math.min(500, score*6)) { spawnObstacle(); lastSpawn = now; }
+        if(now - lastCoin > 900 - Math.min(700, score*5)) { spawnCoin(); lastCoin = now; }
+
+        // update obstacles
+        for(let i = obstacles.length-1; i>=0; i--){
+          const o = obstacles[i];
+          o.mesh.position.z += 8 * dt * gameSpeed; // approach camera (increase z)
+          // rotate for visual
+          o.mesh.rotation.y += dt * 1.2;
+          // remove if passed camera
+          if(o.mesh.position.z > 15){ scene.remove(o.mesh); obstacles.splice(i,1); continue; }
+
+          // collision test
+          playerBox.setFromObject(player);
+          box.setFromObject(o.mesh);
+          if(playerBox.intersectsBox(box)){
+            // if player is sufficiently high, ignore collision
+            if(player.position.y < 0.9){ endGame(); }
+          }
+        }
+
+        // update coins
+        for(let i = coins.length-1; i>=0; i--){
+          const c = coins[i]; c.mesh.position.z += 8 * dt * gameSpeed; c.mesh.rotation.y += dt*3;
+          if(c.mesh.position.z > 15){ scene.remove(c.mesh); coins.splice(i,1); continue; }
+          playerBox.setFromObject(player); box.setFromObject(c.mesh);
+          if(playerBox.intersectsBox(box)){
+            score += 10; scoreEl.textContent = Math.floor(score); scene.remove(c.mesh); coins.splice(i,1);
+          }
+        }
+
+        // Idle score growth
+        score += 0.1 * dt * gameSpeed * 60; // normalized
+        scoreEl.textContent = Math.floor(score);
+
+        // player lane smooth follow
+        const targetX = lanes[currentLane];
+        player.position.x += (targetX - player.position.x) * Math.min(1, 12*dt);
+        shadow.position.x = player.position.x;
+
+        // jump physics
+        if(isJumping){
+          yVel += gravity * (dt*60);
+          player.position.y += yVel;
+          if(player.position.y <= 0){ player.position.y = 0; isJumping=false; yVel = 0; }
+        }
+
+        // camera follow slight bob
+        camera.position.x += (player.position.x - camera.position.x) * (dt*6);
+        camera.position.y += (2.8 + player.position.y - camera.position.y) * (dt*6);
+        camera.lookAt(player.position.x, player.position.y + 1.4, player.position.z - 6);
+      }
+
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // decorative environment: repeating pillars
+    (function makePillars(){
+      const g = new THREE.CylinderGeometry(0.5,0.6,12,12);
+      const m = new THREE.MeshStandardMaterial({color:0x2b2f3a});
+      for(let i=0;i<50;i++){
+        const px = (i%2===0)? -6 : 6; const z = -i*8 - 10;
+        const p = new THREE.Mesh(g,m); p.position.set(px,6,z); scene.add(p);
+      }
+    })();
+
+    // small ambient animation for road (texture-like bands using shader would be better but keep simple)
+
+    // initial camera look
+    camera.lookAt(0,1.5,0);
+
+  </script>
+</body>
 </html>
