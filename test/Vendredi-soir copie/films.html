@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Films</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Proposer un film</h1>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="nourriture.html">Nourriture</a>
+        <a href="historique.html">Historique</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Qui propose le film ?</h2>
+    <input type="text" id="choixPersonne" placeholder="Ton nom">
+
+    <h3>Proposer un nouveau film</h3>
+    <input type="text" id="nouveauFilmTitre" placeholder="Titre du film">
+    <input type="text" id="nouveauFilmDescription" placeholder="Description du film">
+    <button onclick="addFilm()">Ajouter le film</button>
+
+    <div id="filmCards" class="cards-container"></div>
+</main>
+
+<script src="script.js"></script>
+<script>
+    renderFilmCards();
+</script>
+</body>
+</html>
