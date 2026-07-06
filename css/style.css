@@ -1,4 +1,3 @@
-
 .content {
   margin-top: 4rem;
 }
@@ -10,24 +9,66 @@
 }
 
 .img-gold-border{
-  border: 13px;
-  border-style: ridge;
-  margin: 20px;
-  padding: 2;
-  border-color:#dbca12 ;
+  border: 6px ridge #dbca12;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 4px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .img-fluid{
   width: 100%;
 }
 
-.taille{
-  width: 636px;
-  margin: 20px;
+.moon-info-list{
+  width: 100%;
+  max-width: 636px;
+  margin: 15px auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.moon-info-list .list-group-item{
+  border-color: rgba(219, 202, 18, 0.4);
+  padding: 12px 15px;
+  font-size: 1.05rem;
 }
 
 .pays-de-mario-odyssey{
-  border-style: ridge;
+  border: 3px solid #dbca12;
+  border-radius: 14px;
+  background: #fffdf3;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  padding: 20px 10px;
+  margin: 30px auto;
+  max-width: 1150px;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.pays-de-mario-odyssey:hover{
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+  transform: translateY(-2px);
+}
+
+.pays-de-mario-odyssey iframe{
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 10px auto 0 auto;
+}
+
+@media (max-width: 768px){
+  .pays-de-mario-odyssey .col{
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
 }
 
 .couleur-de-lien{
@@ -47,8 +88,230 @@
   z-index: -1;
 }
 
-.decal{
-  margin-left: 1rem;
+.page-heading{
+  margin: 1.5rem 0 1rem 1rem;
+}
+
+.astuce-gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 10px;
+}
+
+.astuce-gallery img{
+  width: calc(50% - 15px);
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.astuce-gallery img:hover{
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px){
+  .astuce-gallery img{
+    width: 100%;
+    height: 220px;
+  }
+}
+
+.lunes-hero{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 15px 15px 30px 15px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.3);
+}
+
+.lunes-hero-bg{
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.lunes-hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.8) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 25px 30px;
+  color: white;
+}
+
+.lunes-hero-overlay h1{
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
+
+.lunes-hero-overlay p{
+  max-width: 700px;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 600px){
+  .lunes-hero-overlay h1{
+    font-size: 1.8rem;
+  }
+  .lunes-hero-bg{
+    max-height: 260px;
+  }
+}
+
+.country-heading{
+  margin: 40px 15px 15px 15px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #dbca12;
+  color: #b67f0b;
+  scroll-margin-top: 90px;
+}
+
+.moon-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+  padding: 0 15px 10px 15px;
+}
+
+.moon-card{
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #333;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.moon-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  color: #333;
+}
+
+.moon-card-img{
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.moon-card-body{
+  padding: 8px 10px;
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.moon-card-number{
+  font-weight: bold;
+  color: #b67f0b;
+  flex-shrink: 0;
+}
+
+.moon-card-name{
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
+/* boutons de navigation "accueil"/"retour" (button brut sans classe, dans un <a>) */
+.content a button{
+  background: #ff0000;
+  background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(168, 105, 94, 1) 100%);
+  color: white;
+  border: none;
+  padding: 9px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.content a button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+}
+
+/* Sélecteur de pays (lunes.html) */
+.country-selector-btn{
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://gonintendo.com/system/file_uploads/uploads/000/033/987/medium/150724235894315.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.country-selector-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+
+.country-selector-panel{
+  background: #fffdf3;
+}
+
+.country-selector-panel .offcanvas-header{
+  border-bottom: 3px solid #dbca12;
+}
+
+.country-selector-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.country-selector-list a.nav-link{
+  display: block;
+  padding: 9px 15px;
+  border-radius: 8px;
+  background: transparent;
+  color: #444;
+  text-decoration: none;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.country-selector-list a.nav-link:hover{
+  background: #fff3cf;
+  color: #333;
+}
+
+.country-selector-list a.nav-link.active{
+  background: #fff3cf;
+  color: #b67f0b;
+  font-weight: 700;
+  border-left: 4px solid #dbca12;
+}
+
+.country-selector-back{
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e0d9b8;
 }
 
 .acc{
@@ -157,7 +420,7 @@
   line-height: 1.5;
 }
 
-.immg {
+.mario-cover-image {
   display: block;
   max-width: 90%;
   margin: 30px auto;
@@ -166,25 +429,26 @@
   transition: transform 0.3s;
 }
 
-.immg:hover {
+.mario-cover-image:hover {
   transform: scale(1.03);
 }
 
 /* Boutons */
 .btn-custom {
-  background-color: #ff0000;
+  background: #ff0000;
+  background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(168, 105, 94, 1) 100%);
   color: white;
   border: none;
   padding: 10px 20px;
   margin: 5px;
   border-radius: 8px;
   font-weight: bold;
-  transition: background 0.3s, transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
   }
 
 .btn-custom:hover {
-  background-color: #e60000;
   transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.3);
 }
 
 /* Responsive */
