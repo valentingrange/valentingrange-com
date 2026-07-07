@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="../../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../css/style.css">
     </head>
-    <body data-bs-spy="scroll" data-bs-target="#country-nav" data-bs-root-margin="-100px 0px -60%" data-bs-smooth-scroll="true" tabindex="0">
+    <body>
         <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
             <div class="container-fluid">
               <a class="navbar-brand" href="../../../index.html">Accueil</a>
@@ -53,41 +53,30 @@
               </div>
             </div>
         </nav>
-        <div class="container">
-          <div class="content">
-          <div class="button">
-          <button class="country-selector-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-            les pays
-          </button>
-          </div>
-
-          <div class="offcanvas offcanvas-start country-selector-panel" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Les pays des lunes</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <div class="lunes-layout">
+          <nav class="lunes-sidebar" id="country-nav">
+            <div class="lunes-sidebar-title">Les pays</div>
+            <ul class="country-selector-list">
+              <li><a class="nav-link" href="#pays-des-chapeaux">Pays des Chapeaux</a></li>
+              <li><a class="nav-link" href="#pays-des-chutes">Pays des Chutes</a></li>
+              <li><a class="nav-link" href="#pays-des-sables">Pays des Sables</a></li>
+              <li><a class="nav-link" href="#pays-du-lac">Pays du Lac</a></li>
+              <li><a class="nav-link" href="#pays-de-la-foret">Pays de la Foret</a></li>
+              <li><a class="nav-link" href="#pays-des-nuages">Pays des Nuages</a></li>
+              <li><a class="nav-link" href="#pays-perdu">Pays Perdu</a></li>
+              <li><a class="nav-link" href="#pays-des-gratte-ciel">Pays des Gratte-ciel</a></li>
+              <li><a class="nav-link" href="#pays-de-la-mer">Pays de la Mer</a></li>
+              <li><a class="nav-link" href="#pays-des-neiges">Pays des Neiges</a></li>
+              <li><a class="nav-link" href="#pays-de-la-cuisine">Pays de la Cuisine</a></li>
+              <li><a class="nav-link" href="#pays-des-ruines">Pays des Ruines</a></li>
+              <li><a class="nav-link" href="#pays-de-bowser">Pays de Bowser</a></li>
+              <li><a class="nav-link" href="#pays-de-la-lune">Pays de la Lune</a></li>
+            </ul>
+            <div class="country-selector-back">
+              <a href="../index.html"><button>retour à l'accueil</button></a>
             </div>
-            <div class="offcanvas-body">
-              <ul class="country-selector-list nav" id="country-nav">
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-des-chapeaux">Pays des Chapeaux</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-des-chutes">Pays des Chutes</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-des-sables">Pays des Sables</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-du-lac">Pays du Lac</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-de-la-foret">Pays de la Foret</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-des-nuages">Pays des Nuages</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-perdu">Pays Perdu</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-des-gratte-ciel">Pays des Gratte-ciel</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-de-la-mer">Pays de la Mer</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-des-neiges">Pays des Neiges</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-de-la-cuisine">Pays de la Cuisine</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-des-ruines">Pays des Ruines</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-de-bowser">Pays de Bowser</a></li>
-                <li><a class="nav-link" data-bs-dismiss="offcanvas" href="#pays-de-la-lune">Pays de la Lune</a></li>
-              </ul>
-              <div class="country-selector-back">
-                <a href="../index.html"><button>retour à l'accueil Mario Odyssey</button></a>
-              </div>
-            </div>
-          </div>
+          </nav>
+          <div class="lunes-main">
     <div class="lunes-hero">
       <img class="lunes-hero-bg" src="https://sketchfav.com/rawimg/free-sketch-misc/mario-moon-sketch-freebie-r1.jpg" alt="Illustration Super Mario Odyssey">
       <div class="lunes-hero-overlay">
@@ -3737,5 +3726,30 @@
           </div>
         </div>
         <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var links = Array.prototype.slice.call(document.querySelectorAll('#country-nav a.nav-link'));
+          var items = links.map(function (link) {
+            var id = link.getAttribute('href').slice(1);
+            return { link: link, section: document.getElementById(id) };
+          }).filter(function (item) { return item.section; });
+
+          function updateActive() {
+            var scrollPos = window.scrollY + 130;
+            var current = items[0];
+            items.forEach(function (item) {
+              if (item.section.offsetTop <= scrollPos) {
+                current = item;
+              }
+            });
+            items.forEach(function (item) { item.link.classList.remove('active'); });
+            if (current) { current.link.classList.add('active'); }
+          }
+
+          window.addEventListener('scroll', updateActive, { passive: true });
+          window.addEventListener('resize', updateActive);
+          updateActive();
+        });
+        </script>
     </body>
 </html>

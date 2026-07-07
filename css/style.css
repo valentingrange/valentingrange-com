@@ -1,6 +1,11 @@
+html{
+  scroll-behavior: smooth;
+}
+
 .content {
   margin-top: 4rem;
 }
+
 
 .button {
   position: fixed;
@@ -227,7 +232,7 @@
 }
 
 /* boutons de navigation "accueil"/"retour" (button brut sans classe, dans un <a>) */
-.content a button{
+.content a button, .lunes-main a button{
   background: #ff0000;
   background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(168, 105, 94, 1) 100%);
   color: white;
@@ -241,37 +246,57 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.content a button:hover{
+.content a button:hover, .lunes-main a button:hover{
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.3);
 }
 
-/* Sélecteur de pays (lunes.html) */
-.country-selector-btn{
-  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)), url("https://gonintendo.com/system/file_uploads/uploads/000/033/987/medium/150724235894315.jpg");
-  background-size: cover;
-  background-position: center;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 30px;
-  font-weight: bold;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-  transition: transform 0.2s, box-shadow 0.2s;
+/* Sélecteur de pays (lunes.html) - sidebar toujours visible */
+.lunes-layout{
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.country-selector-btn:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
-}
-
-.country-selector-panel{
+.lunes-sidebar{
+  position: sticky;
+  top: 75px;
+  flex: 0 0 230px;
+  max-height: calc(100vh - 95px);
+  overflow-y: auto;
   background: #fffdf3;
+  border: 2px solid #dbca12;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
 }
 
-.country-selector-panel .offcanvas-header{
-  border-bottom: 3px solid #dbca12;
+.lunes-sidebar-title{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #b67f0b;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #dbca12;
+}
+
+.lunes-main{
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+@media (max-width: 900px){
+  .lunes-layout{
+    flex-direction: column;
+  }
+  .lunes-sidebar{
+    position: static;
+    width: 100%;
+    max-height: none;
+    flex-basis: auto;
+  }
 }
 
 .country-selector-list{
@@ -311,6 +336,33 @@
   margin-top: 20px;
   padding-top: 15px;
   border-top: 1px solid #e0d9b8;
+}
+
+.country-selector-back a{
+  text-decoration: none;
+  display: block;
+}
+
+.country-selector-back a button{
+  width: 100%;
+  background: transparent;
+  color: #b67f0b;
+  border: 2px solid #dbca12;
+  padding: 8px 12px;
+  margin: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.country-selector-back a button:hover{
+  background: #dbca12;
+  color: #fff;
+  transform: none;
+  box-shadow: none;
 }
 
 .acc{
