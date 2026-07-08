@@ -53,10 +53,210 @@
               </div>
             </div>
         </nav>
-      <div class="content">
-      
-        <a href="index.html#bas"><button>retour</button></a>
-      </div>          
-     <script src="../../js/bootstrap.bundle.min.js"></script>
+
+        <div class="totk-anyp-hero">
+          <h1>Terminer Tears of the Kingdom au plus vite (any%)</h1>
+          <p>Le chemin le plus direct pour voir le générique de fin, sans faire les 4 régions ni les temples : seulement ce qui est vraiment obligatoire, plus l'épée de légende. Coche les étapes au fur et à mesure, ta progression est sauvegardée automatiquement sur cet appareil.</p>
+          <div class="totk-anyp-progress-bar">
+            <div class="totk-anyp-progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="totk-anyp-progress-label" id="progress-label">0 / 0 étapes complétées</div>
+        </div>
+
+        <div class="totk-anyp-layout">
+          <nav class="totk-anyp-sidebar" id="totk-anyp-nav">
+            <div class="totk-anyp-sidebar-title">Étapes</div>
+            <ul class="totk-anyp-nav-list">
+              <li><a class="nav-link" href="#controles">Légende des touches</a></li>
+              <li><a class="nav-link" href="#prelude">1. Île du Prélude</a></li>
+              <li><a class="nav-link" href="#hyrule">2. Retour à Hyrule</a></li>
+              <li><a class="nav-link" href="#epee">3. L'épée de légende</a></li>
+              <li><a class="nav-link" href="#chateau">4. Château d'Hyrule</a></li>
+              <li><a class="nav-link" href="#final">5. Combat final</a></li>
+            </ul>
+            <div class="totk-anyp-reset">
+              <button id="reset-progress">Réinitialiser ma progression</button>
+            </div>
+            <div class="totk-anyp-back">
+              <a href="index.html"><button>retour à l'accueil</button></a>
+            </div>
+          </nav>
+
+          <div class="totk-anyp-main">
+
+            <h2 id="controles" class="totk-anyp-heading">Légende des touches</h2>
+            <div class="totk-anyp-section">
+              <p>Voici les touches Switch utilisées dans ce guide :</p>
+              <div class="switch-legend">
+                <span><span class="switch-btn btn-a">A</span> Confirmer / interagir / sauter</span>
+                <span><span class="switch-btn btn-b">B</span> Annuler / courir</span>
+                <span><span class="switch-btn btn-x">X</span> Sanctuaires / carte</span>
+                <span><span class="switch-btn btn-y">Y</span> Dégainer arme / objet</span>
+                <span><span class="switch-btn btn-l">L</span> Bouclier / caméra</span>
+                <span><span class="switch-btn btn-r">R</span> Objet secondaire</span>
+                <span><span class="switch-btn btn-zl">ZL</span> Viser</span>
+                <span><span class="switch-btn btn-zr">ZR</span> Attaquer / tirer</span>
+                <span><span class="switch-btn btn-plus">+</span> Menu / inventaire</span>
+                <span><span class="switch-btn btn-minus">−</span> Carnet d'aventure</span>
+                <span><span class="switch-btn btn-stick">Stick</span> Déplacement / caméra</span>
+              </div>
+            </div>
+
+            <h2 id="prelude" class="totk-anyp-heading">1. Île du Prélude</h2>
+            <div class="totk-anyp-section">
+              <p>Cette partie est un tutoriel obligatoire : impossible d'y échapper, mais elle est assez courte et linéaire.</p>
+              <div class="totk-img-placeholder" data-src="img/totk-prelude-01.jpg">Image à venir : img/totk-prelude-01.jpg</div>
+              <ul class="totk-anyp-steps">
+                <li><label><input type="checkbox" data-step="p1"> Suis la cinématique d'ouverture sous le Château d'Hyrule jusqu'au réveil de Link sur l'Île du Prélude.</label></li>
+                <li><label><input type="checkbox" data-step="p2"> Récupère l'<strong>Épée du Néant</strong> (temporaire) et tranche les lianes qui bloquent la sortie avec <span class="switch-btn btn-zr">ZR</span>.</label></li>
+                <li><label><input type="checkbox" data-step="p3"> Termine le <strong>Sanctuaire de l'Emprise</strong> pour débloquer le pouvoir Emprise (Ultrahand).</label></li>
+                <li><label><input type="checkbox" data-step="p4"> Termine le <strong>Sanctuaire de la Fusion</strong> pour débloquer le pouvoir Fusion.</label></li>
+                <li><label><input type="checkbox" data-step="p5"> Termine le <strong>Sanctuaire de l'Ascension</strong> pour débloquer le pouvoir Ascension.</label></li>
+                <li><label><input type="checkbox" data-step="p6"> Termine le <strong>Sanctuaire de la Rétrospection</strong> pour débloquer le pouvoir Rétrospection.</label></li>
+                <li><label><input type="checkbox" data-step="p7"> Retourne au Temple du Temps : utilise Rétrospection <span class="switch-btn btn-x">X</span> sur les grandes roues pour les faire tourner à l'envers et grimper.</label></li>
+                <li><label><input type="checkbox" data-step="p8"> Récupère le <strong>Parachute</strong> et le <strong>Purah Pad</strong>, puis saute de l'île pour rejoindre Hyrule.</label></li>
+              </ul>
+            </div>
+
+            <h2 id="hyrule" class="totk-anyp-heading">2. Retour à Hyrule</h2>
+            <div class="totk-anyp-section">
+              <p>Une fois au sol, tu es totalement libre : pour finir le jeu au plus vite, il n'est pas nécessaire de faire les 4 régions (Rito, Goron, Zora, Gerudo) ni leurs temples. Tu peux foncer directement vers la suite.</p>
+              <div class="totk-img-placeholder" data-src="img/totk-hyrule-01.jpg">Image à venir : img/totk-hyrule-01.jpg</div>
+              <ul class="totk-anyp-steps">
+                <li><label><input type="checkbox" data-step="h1"> Ouvre <span class="switch-btn btn-plus">+</span> le menu d'objets et vérifie ton équipement de base (arme, bouclier).</label></li>
+                <li><label><input type="checkbox" data-step="h2"> Facultatif mais recommandé : récolte quelques champignons/fruits et cuisine 2-3 plats de soin sur un feu de camp pour la suite.</label></li>
+              </ul>
+              <div class="totk-anyp-tip">
+                <strong>Astuce :</strong> tu peux ignorer complètement les 4 sages/temples régionaux pour finir le jeu. Ils ne servent qu'à rendre le combat final plus facile (soutien pendant les phases de combat), mais ne sont jamais obligatoires.
+              </div>
+            </div>
+
+            <h2 id="epee" class="totk-anyp-heading">3. L'épée de légende (Master Sword)</h2>
+            <div class="totk-anyp-section">
+              <p>Optionnelle pour finir le jeu, mais demandée explicitement dans ce guide : récupérer et purifier la Master Sword avant l'affrontement final.</p>
+              <div class="totk-img-placeholder" data-src="img/totk-epee-01.jpg">Image à venir : img/totk-epee-01.jpg</div>
+              <ul class="totk-anyp-steps">
+                <li><label><input type="checkbox" data-step="e1"> Rends-toi à l'<strong>Étang de Légende</strong>, dans la forêt de Firone (Bois Perdu), à l'ouest d'Hyrule.</label></li>
+                <li><label><input type="checkbox" data-step="e2"> Approche-toi de l'étang pour déclencher la quête <strong>"L'épée qui scelle les ténèbres"</strong>.</label></li>
+                <li><label><input type="checkbox" data-step="e3"> Descends dans la zone souterraine sous l'étang et progresse en éliminant les <strong>Mains de Miasme</strong> avec <span class="switch-btn btn-zr">ZR</span> pour purifier la zone.</label></li>
+                <li><label><input type="checkbox" data-step="e4"> Atteins la salle finale et récupère la <strong>Master Sword purifiée</strong>.</label></li>
+              </ul>
+              <div class="totk-anyp-tip">
+                <strong>Astuce :</strong> la Master Sword se recharge seule avec le temps après s'être "cassée" (elle perd juste temporairement sa capacité à émettre un rayon d'énergie), elle ne disparaît jamais.
+              </div>
+            </div>
+
+            <h2 id="chateau" class="totk-anyp-heading">4. Direction le Château d'Hyrule</h2>
+            <div class="totk-anyp-section">
+              <p>Le Château d'Hyrule flotte désormais dans le ciel, entouré de miasme. C'est la dernière étape avant le combat final.</p>
+              <div class="totk-img-placeholder" data-src="img/totk-chateau-01.jpg">Image à venir : img/totk-chateau-01.jpg</div>
+              <ul class="totk-anyp-steps">
+                <li><label><input type="checkbox" data-step="c1"> Repère le château dans le ciel au-dessus d'Hyrule (visible depuis presque toute la carte).</label></li>
+                <li><label><input type="checkbox" data-step="c2"> Grimpe en hauteur (tour, colline, ou machine volante construite avec Emprise) puis utilise le <strong>Parachute</strong> pour t'en approcher.</label></li>
+                <li><label><input type="checkbox" data-step="c3"> Entre dans le château et progresse vers le sommet en évitant ou combattant les monstres corrompus par le miasme.</label></li>
+              </ul>
+              <div class="totk-anyp-warning">
+                <strong>Attention :</strong> le miasme présent dans le château inflige des dégâts continus et corrompt temporairement Link à proximité. Reste à distance des zones les plus sombres si ta jauge de cœurs est basse.
+              </div>
+            </div>
+
+            <h2 id="final" class="totk-anyp-heading">5. Le combat final contre Ganondorf</h2>
+            <div class="totk-anyp-section">
+              <p>Prépare un maximum de plats/élixirs de soin avant d'entamer cette section : elle s'enchaîne en plusieurs phases sans réel point de sauvegarde intermédiaire.</p>
+              <div class="totk-img-placeholder" data-src="img/totk-final-01.jpg">Image à venir : img/totk-final-01.jpg</div>
+              <ul class="totk-anyp-steps">
+                <li><label><input type="checkbox" data-step="f1"> <strong>Phase 1 :</strong> duel à l'épée contre Ganondorf au sommet du château. Esquive avec <span class="switch-btn btn-b">B</span> juste avant ses attaques pour déclencher une Prouesse Parfaite, puis riposte avec <span class="switch-btn btn-zr">ZR</span>.</label></li>
+                <li><label><input type="checkbox" data-step="f2"> <strong>Phase 2 :</strong> chute libre pendant l'effondrement du château, combat aérien contre Ganondorf - vise-le avec l'arc <span class="switch-btn btn-zl">ZL</span> + <span class="switch-btn btn-zr">ZR</span>.</label></li>
+                <li><label><input type="checkbox" data-step="f3"> <strong>Phase 3 :</strong> affronte le Roi Démon dans l'arène au sol. Privilégie la <strong>Master Sword</strong> (efficace contre le miasme) et surveille ta jauge de cœurs.</label></li>
+                <li><label><input type="checkbox" data-step="f4"> <strong>Phase 4 :</strong> Ganondorf se transforme en dragon corrompu. Porté par le Dragon de Lumière, vise ses points faibles lumineux à l'arc <span class="switch-btn btn-zl">ZL</span> + <span class="switch-btn btn-zr">ZR</span> jusqu'à sa défaite.</label></li>
+                <li><label><input type="checkbox" data-step="f5"> Regarde le générique de fin : bravo, Hyrule est sauvé !</label></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var STORAGE_KEY = 'totk-anyp-progress';
+          var checkboxes = Array.prototype.slice.call(document.querySelectorAll('.totk-anyp-steps input[type="checkbox"]'));
+          var progressFill = document.getElementById('progress-fill');
+          var progressLabel = document.getElementById('progress-label');
+
+          function loadProgress() {
+            try {
+              return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+            } catch (e) {
+              return {};
+            }
+          }
+
+          function saveProgress(data) {
+            try {
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            } catch (e) { /* localStorage indisponible, on ignore */ }
+          }
+
+          function updateProgressBar() {
+            var total = checkboxes.length;
+            var done = checkboxes.filter(function (cb) { return cb.checked; }).length;
+            var pct = total ? Math.round((done / total) * 100) : 0;
+            progressFill.style.width = pct + '%';
+            progressLabel.textContent = done + ' / ' + total + ' étapes complétées';
+          }
+
+          var saved = loadProgress();
+          checkboxes.forEach(function (cb) {
+            var id = cb.getAttribute('data-step');
+            if (saved[id]) {
+              cb.checked = true;
+              cb.closest('li').classList.add('step-done');
+            }
+            cb.addEventListener('change', function () {
+              var data = loadProgress();
+              data[id] = cb.checked;
+              saveProgress(data);
+              cb.closest('li').classList.toggle('step-done', cb.checked);
+              updateProgressBar();
+            });
+          });
+          updateProgressBar();
+
+          document.getElementById('reset-progress').addEventListener('click', function () {
+            if (confirm('Réinitialiser toute ta progression sur ce guide ?')) {
+              localStorage.removeItem(STORAGE_KEY);
+              checkboxes.forEach(function (cb) {
+                cb.checked = false;
+                cb.closest('li').classList.remove('step-done');
+              });
+              updateProgressBar();
+            }
+          });
+
+          // sidebar scrollspy
+          var links = Array.prototype.slice.call(document.querySelectorAll('#totk-anyp-nav a.nav-link'));
+          var items = links.map(function (link) {
+            var id = link.getAttribute('href').slice(1);
+            return { link: link, section: document.getElementById(id) };
+          }).filter(function (item) { return item.section; });
+
+          function updateActive() {
+            var scrollPos = window.scrollY + 130;
+            var current = items[0];
+            items.forEach(function (item) {
+              if (item.section.offsetTop <= scrollPos) {
+                current = item;
+              }
+            });
+            items.forEach(function (item) { item.link.classList.remove('active'); });
+            if (current) { current.link.classList.add('active'); }
+          }
+
+          window.addEventListener('scroll', updateActive, { passive: true });
+          window.addEventListener('resize', updateActive);
+          updateActive();
+        });
+        </script>
     </body>
 </html>

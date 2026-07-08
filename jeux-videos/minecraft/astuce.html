@@ -53,13 +53,120 @@
                 </ul>
               </div>
             </div>
-        </nav>  
-        <div class="content">  
-          <h1 class="decal">Astuce</h1>
-          <br>
-          <br>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html#bas"><button>Retour</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../index.html#bas"><button>Accueil</button></a>
-        </div>           
-       <script src="../../js/bootstrap.bundle.min.js"></script>
+        </nav>
+        <div class="astuce-mc-hero">
+          <h1>Astuces Minecraft</h1>
+          <p>Petits guides pratiques pour bien démarrer et profiter au maximum du jeu.</p>
+        </div>
+
+        <div class="astuce-mc-wrap">
+          <h2 class="astuce-mc-title">Comment créer un monde (Java &amp; Bedrock)</h2>
+          <p class="astuce-mc-intro">La création d'un monde ne se fait pas exactement pareil selon l'édition du jeu. Choisis ton édition ci-dessous :</p>
+
+          <div class="astuce-mc-tabs">
+            <button class="astuce-mc-tab active" data-tab="java">Édition Java</button>
+            <button class="astuce-mc-tab" data-tab="bedrock">Édition Bedrock</button>
+          </div>
+
+          <div class="astuce-mc-panel" id="tab-java">
+            <ol class="astuce-mc-steps">
+              <li>
+                <strong>Lance le launcher Minecraft</strong> et clique sur <strong>Jouer</strong> pour ouvrir le menu principal, puis sur <strong>Solo</strong>.
+              </li>
+              <li>
+                Dans la liste de tes mondes, clique sur le bouton <strong>Créer un nouveau monde</strong>.
+              </li>
+              <li>
+                Donne un <strong>nom</strong> à ton monde dans le champ prévu à cet effet.
+              </li>
+              <li>
+                Choisis le <strong>mode de jeu</strong> :
+                <ul>
+                  <li><strong>Survie</strong> : gestion de la vie, de la faim, récolte de ressources.</li>
+                  <li><strong>Créatif</strong> : ressources illimitées, vol libre, pas de dégâts.</li>
+                  <li><strong>Aventure</strong> : pensé pour les cartes/mods, interactions limitées avec les blocs.</li>
+                  <li><strong>Spectateur</strong> : pour observer sans interagir.</li>
+                </ul>
+              </li>
+              <li>
+                Choisis la <strong>difficulté</strong> (Paisible, Facile, Normal, Difficile), et active éventuellement l'option <strong>Monde codé en dur</strong> (une seule vie, le monde est supprimé si tu meurs).
+              </li>
+              <li>
+                Clique sur <strong>Plus d'options de monde...</strong> si tu veux personnaliser :
+                <ul>
+                  <li>La <strong>graine (seed)</strong> du monde, pour générer un terrain précis.</li>
+                  <li>Le <strong>type de monde</strong> : Par défaut, Superplat, Amplifié, Un seul biome, ou Ancien.</li>
+                  <li>Génération des <strong>structures</strong> (villages, temples...) et des <strong>bonus au coffre</strong>.</li>
+                </ul>
+              </li>
+              <li>
+                Une fois tout configuré, clique sur <strong>Créer un nouveau monde</strong> pour lancer la génération.
+              </li>
+            </ol>
+            <div class="astuce-mc-tip">
+              <strong>Astuce :</strong> sur Java, tu peux aussi importer une seed trouvée en ligne pour démarrer sur un monde précis (village de départ, temple proche, etc.).
+            </div>
+          </div>
+
+          <div class="astuce-mc-panel" id="tab-bedrock" style="display:none;">
+            <ol class="astuce-mc-steps">
+              <li>
+                Ouvre Minecraft et clique sur <strong>Jouer</strong> dans le menu principal.
+              </li>
+              <li>
+                Va sur l'onglet <strong>Mondes</strong> en haut de l'écran, puis clique sur <strong>Créer nouveau</strong>, et enfin sur <strong>Créer un nouveau monde</strong>.
+              </li>
+              <li>
+                Renomme ton monde dans le champ <strong>Nom du monde</strong> si tu le souhaites.
+              </li>
+              <li>
+                Dans l'onglet <strong>Paramètres de jeu</strong>, choisis le <strong>mode de jeu</strong> (Survie, Créatif ou Aventure) et la <strong>difficulté</strong>.
+              </li>
+              <li>
+                Ouvre l'onglet <strong>Monde</strong> pour choisir le <strong>générateur de monde</strong> :
+                <ul>
+                  <li><strong>Infini</strong> : monde classique généré à l'infini.</li>
+                  <li><strong>Superplat</strong> : terrain plat, idéal pour construire.</li>
+                  <li><strong>Ancien</strong> : génération de terrain d'avant les mises à jour récentes.</li>
+                </ul>
+                Tu peux aussi entrer une <strong>graine (seed)</strong> ici.
+              </li>
+              <li>
+                Dans l'onglet <strong>Tricheries</strong>, active si besoin les commandes et les tricheries (utile en Créatif pour tester des choses).
+              </li>
+              <li>
+                Une fois satisfait des réglages, clique sur <strong>Créer</strong> en haut à droite pour générer ton monde.
+              </li>
+            </ol>
+            <div class="astuce-mc-tip">
+              <strong>Astuce :</strong> sur Bedrock, pense à activer la sauvegarde automatique sur un compte Microsoft si tu veux retrouver ton monde sur plusieurs appareils (mobile, console, PC).
+            </div>
+          </div>
+
+          <div class="astuce-mc-warning">
+            <strong>À savoir :</strong> les mondes créés sur l'édition Java ne sont pas compatibles avec l'édition Bedrock (et inversement) sans passer par un outil de conversion. Les deux éditions ne se jouent pas non plus ensemble en multijoueur, sauf via des solutions tierces.
+          </div>
+
+          <div style="text-align:center; margin-top:30px;">
+            <a href="index.html"><button class="btn-minecraft">Retour</button></a>
+            <a href="../../index.html#bas"><button class="btn-minecraft">Accueil</button></a>
+          </div>
+        </div>
+
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var tabs = document.querySelectorAll('.astuce-mc-tab');
+          tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+              tabs.forEach(function (t) { t.classList.remove('active'); });
+              tab.classList.add('active');
+              document.getElementById('tab-java').style.display = 'none';
+              document.getElementById('tab-bedrock').style.display = 'none';
+              document.getElementById('tab-' + tab.getAttribute('data-tab')).style.display = 'block';
+            });
+          });
+        });
+        </script>
     </body>
 </html>

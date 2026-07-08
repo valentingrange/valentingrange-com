@@ -232,7 +232,7 @@ html{
 }
 
 /* boutons de navigation "accueil"/"retour" (button brut sans classe, dans un <a>) */
-.content a button, .lunes-main a button{
+.mario-odyssey-page a button, .lunes-main a button{
   background: #ff0000;
   background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(168, 105, 94, 1) 100%);
   color: white;
@@ -246,7 +246,7 @@ html{
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.content a button:hover, .lunes-main a button:hover{
+.mario-odyssey-page a button:hover, .lunes-main a button:hover{
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.3);
 }
@@ -692,4 +692,286 @@ html{
 .btn-minecraft:hover { 
   background-color: #2d7a2d;
   transform: translateY(-2px);
+}
+/* ===== Page Solution Minecraft (guide de survie) ===== */
+.solution-mc-hero{
+  background: linear-gradient(135deg, #3c9e3c, #2f4f2f);
+  padding: 110px 20px 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.solution-mc-hero h1{
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-shadow: 3px 3px #1a2e1a;
+}
+
+.solution-mc-hero p{
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.solution-mc-layout{
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solution-mc-sidebar{
+  position: sticky;
+  top: 75px;
+  flex: 0 0 240px;
+  max-height: calc(100vh - 95px);
+  overflow-y: auto;
+  background: #eef7ea;
+  border: 2px solid #3c9e3c;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+.solution-mc-sidebar-title{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #2f6e2f;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #3c9e3c;
+}
+
+.solution-mc-nav-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.solution-mc-nav-list a.nav-link{
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: transparent;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.solution-mc-nav-list a.nav-link:hover{
+  background: #dcf0d4;
+}
+
+.solution-mc-nav-list a.nav-link.active{
+  background: #dcf0d4;
+  color: #2f6e2f;
+  font-weight: 700;
+  border-left: 4px solid #3c9e3c;
+}
+
+.solution-mc-back{
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #c8e0c0;
+}
+
+.solution-mc-back a{
+  text-decoration: none;
+  display: block;
+}
+
+.solution-mc-back a button{
+  width: 100%;
+  background: transparent;
+  color: #2f6e2f;
+  border: 2px solid #3c9e3c;
+  padding: 8px 12px;
+  margin: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.solution-mc-back a button:hover{
+  background: #3c9e3c;
+  color: #fff;
+}
+
+.solution-mc-main{
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.solution-mc-heading{
+  margin: 35px 10px 12px 10px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #3c9e3c;
+  color: #2f6e2f;
+  scroll-margin-top: 90px;
+}
+
+.solution-mc-section{
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 0 10px 10px 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  line-height: 1.6;
+}
+
+.solution-mc-section ul{
+  padding-left: 20px;
+}
+
+.solution-mc-section li{
+  margin-bottom: 8px;
+}
+
+.solution-mc-tip{
+  background: #eef7ea;
+  border-left: 4px solid #3c9e3c;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.solution-mc-warning{
+  background: #fdeaea;
+  border-left: 4px solid #c94b4b;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px){
+  .solution-mc-layout{
+    flex-direction: column;
+  }
+  .solution-mc-sidebar{
+    position: static;
+    width: 100%;
+    max-height: none;
+    flex-basis: auto;
+  }
+}
+
+/* ===== Page Astuce Minecraft ===== */
+.astuce-mc-hero{
+  background: linear-gradient(135deg, #3c9e3c, #2f4f2f);
+  padding: 110px 20px 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.astuce-mc-hero h1{
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-shadow: 3px 3px #1a2e1a;
+}
+
+.astuce-mc-hero p{
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+.astuce-mc-wrap{
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 30px 20px 50px 20px;
+}
+
+.astuce-mc-title{
+  color: #2f6e2f;
+  border-bottom: 3px solid #3c9e3c;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.astuce-mc-intro{
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.astuce-mc-tabs{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #dcefd4;
+}
+
+.astuce-mc-tab{
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 10px 18px;
+  font-weight: 700;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.astuce-mc-tab:hover{
+  color: #2f6e2f;
+}
+
+.astuce-mc-tab.active{
+  color: #2f6e2f;
+  border-bottom: 3px solid #3c9e3c;
+}
+
+.astuce-mc-panel{
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.astuce-mc-steps{
+  padding-left: 22px;
+  line-height: 1.7;
+}
+
+.astuce-mc-steps li{
+  margin-bottom: 14px;
+}
+
+.astuce-mc-steps ul{
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+.astuce-mc-tip{
+  background: #eef7ea;
+  border-left: 4px solid #3c9e3c;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.astuce-mc-warning{
+  background: #fdeaea;
+  border-left: 4px solid #c94b4b;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-top: 20px;
+  font-size: 0.95rem;
 }
