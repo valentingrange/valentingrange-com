@@ -975,3 +975,507 @@ html{
   margin-top: 20px;
   font-size: 0.95rem;
 }
+
+/* ===== Page Solution Zelda: Tears of the Kingdom ===== */
+.solution-totk-hero{
+  background: linear-gradient(135deg, #1a472a, #00bfa5);
+  padding: 110px 20px 40px 20px;
+  text-align: center;
+  color: white;
+}
+
+.solution-totk-hero h1{
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.solution-totk-hero p{
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.solution-totk-layout{
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solution-totk-sidebar{
+  position: sticky;
+  top: 75px;
+  flex: 0 0 250px;
+  max-height: calc(100vh - 95px);
+  overflow-y: auto;
+  background: #eafaf6;
+  border: 2px solid #00bfa5;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+.solution-totk-sidebar-title{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #1a472a;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #00bfa5;
+}
+
+.solution-totk-nav-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.solution-totk-nav-list a.nav-link{
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: transparent;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.88rem;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.solution-totk-nav-list a.nav-link:hover{
+  background: #d3f3ec;
+}
+
+.solution-totk-nav-list a.nav-link.active{
+  background: #d3f3ec;
+  color: #00695c;
+  font-weight: 700;
+  border-left: 4px solid #00bfa5;
+}
+
+.solution-totk-back{
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #bfe8df;
+}
+
+.solution-totk-back a{
+  text-decoration: none;
+  display: block;
+}
+
+.solution-totk-back a button{
+  width: 100%;
+  background: transparent;
+  color: #00695c;
+  border: 2px solid #00bfa5;
+  padding: 8px 12px;
+  margin: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.solution-totk-back a button:hover{
+  background: #00bfa5;
+  color: #fff;
+}
+
+.solution-totk-main{
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.solution-totk-heading{
+  margin: 35px 10px 12px 10px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #00bfa5;
+  color: #1a472a;
+  scroll-margin-top: 90px;
+}
+
+.solution-totk-section{
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 0 10px 10px 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  line-height: 1.6;
+}
+
+.solution-totk-section ul{
+  padding-left: 20px;
+}
+
+.solution-totk-section li{
+  margin-bottom: 8px;
+}
+
+.solution-totk-tip{
+  background: #eafaf6;
+  border-left: 4px solid #00bfa5;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.solution-totk-warning{
+  background: #fdeaea;
+  border-left: 4px solid #c94b4b;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px){
+  .solution-totk-layout{
+    flex-direction: column;
+  }
+  .solution-totk-sidebar{
+    position: static;
+    width: 100%;
+    max-height: none;
+    flex-basis: auto;
+  }
+}
+
+/* ===== Page Solution TOTK any% (avec suivi de progression) ===== */
+.totk-anyp-hero{
+  background: linear-gradient(135deg, #1a472a, #00bfa5);
+  padding: 110px 20px 30px 20px;
+  text-align: center;
+  color: white;
+}
+
+.totk-anyp-hero h1{
+  font-size: 2.1rem;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.totk-anyp-hero p{
+  max-width: 780px;
+  margin: 0 auto 20px auto;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.totk-anyp-progress-bar{
+  max-width: 500px;
+  margin: 0 auto;
+  height: 14px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.totk-anyp-progress-fill{
+  height: 100%;
+  width: 0%;
+  background: #ffd54f;
+  transition: width 0.3s;
+}
+
+.totk-anyp-progress-label{
+  margin-top: 8px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.totk-anyp-layout{
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.totk-anyp-sidebar{
+  position: sticky;
+  top: 75px;
+  flex: 0 0 250px;
+  max-height: calc(100vh - 95px);
+  overflow-y: auto;
+  background: #eafaf6;
+  border: 2px solid #00bfa5;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+
+.totk-anyp-sidebar-title{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #1a472a;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #00bfa5;
+}
+
+.totk-anyp-nav-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.totk-anyp-nav-list a.nav-link{
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: transparent;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.88rem;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.totk-anyp-nav-list a.nav-link:hover{
+  background: #d3f3ec;
+}
+
+.totk-anyp-nav-list a.nav-link.active{
+  background: #d3f3ec;
+  color: #00695c;
+  font-weight: 700;
+  border-left: 4px solid #00bfa5;
+}
+
+.totk-anyp-reset{
+  margin-top: 15px;
+}
+
+.totk-anyp-reset button{
+  width: 100%;
+  background: transparent;
+  color: #a33;
+  border: 2px solid #d99;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.totk-anyp-reset button:hover{
+  background: #c94b4b;
+  color: #fff;
+  border-color: #c94b4b;
+}
+
+.totk-anyp-back{
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #bfe8df;
+}
+
+.totk-anyp-back a{
+  text-decoration: none;
+  display: block;
+}
+
+.totk-anyp-back a button{
+  width: 100%;
+  background: transparent;
+  color: #00695c;
+  border: 2px solid #00bfa5;
+  padding: 8px 12px;
+  margin: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.totk-anyp-back a button:hover{
+  background: #00bfa5;
+  color: #fff;
+}
+
+.totk-anyp-main{
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.totk-anyp-heading{
+  margin: 35px 10px 12px 10px;
+  padding-bottom: 8px;
+  border-bottom: 3px solid #00bfa5;
+  color: #1a472a;
+  scroll-margin-top: 90px;
+}
+
+.totk-anyp-section{
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 0 10px 10px 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  line-height: 1.6;
+}
+
+.totk-anyp-tip{
+  background: #eafaf6;
+  border-left: 4px solid #00bfa5;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.totk-anyp-warning{
+  background: #fdeaea;
+  border-left: 4px solid #c94b4b;
+  border-radius: 6px;
+  padding: 10px 15px;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+/* Étapes à cocher */
+.totk-anyp-steps{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.totk-anyp-steps li{
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  transition: background 0.2s;
+}
+
+.totk-anyp-steps li:hover{
+  background: #f5f5f5;
+}
+
+.totk-anyp-steps li.step-done{
+  background: #eafaf6;
+}
+
+.totk-anyp-steps label{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.totk-anyp-steps .step-text{
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.totk-anyp-steps input[type="checkbox"]{
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  accent-color: #00bfa5;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.totk-anyp-steps li.step-done label{
+  color: #777;
+  text-decoration: line-through;
+}
+
+/* Badges de touches Switch */
+.switch-legend{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.switch-legend > span{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.switch-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 6px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  vertical-align: middle;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.3);
+}
+
+.btn-a{ background: #2e8b3d; }
+.btn-b{ background: #d1315e; }
+.btn-x{ background: #3b7fd1; }
+.btn-y{ background: #d1b32e; }
+.btn-l, .btn-r, .btn-zl, .btn-zr{
+  background: #555;
+  border-radius: 6px;
+}
+.btn-plus, .btn-minus{
+  background: #333;
+  border-radius: 50%;
+}
+.btn-stick{
+  background: #777;
+  border-radius: 6px;
+  min-width: 46px;
+}
+
+@media (max-width: 900px){
+  .totk-anyp-layout{
+    flex-direction: column;
+  }
+  .totk-anyp-sidebar{
+    position: static;
+    width: 100%;
+    max-height: none;
+    flex-basis: auto;
+  }
+}
+
+/* Placeholder image (en attendant les vraies captures) */
+.totk-img-placeholder{
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  margin: 15px 0;
+  background: repeating-linear-gradient(45deg, #e0e0e0, #e0e0e0 10px, #d5d5d5 10px, #d5d5d5 20px);
+  border: 2px dashed #aaa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #777;
+  font-size: 0.85rem;
+  padding: 10px;
+}
